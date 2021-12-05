@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <title>Jonathan Flores</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+    emailjs.init("user_3Dni8tClX1OpVNhJRnhhr");
+    })();
+</script>
+</head>
+<body>
+    <section id="landing-page" onmousemove="moveBackgrouund(event)">
+        <nav>
+            
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#projects" class="nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    
+                    "><i class="fas fa-adjust" ></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <figure>
+                    <img src="./assets/FaceLogo.jpg" class="face__logo"/>
+                </figure>
+                <h1 class="title">Hey</h1>
+                <h1 class="title title--secondary">I'm Jonathan</h1>
+                <p class="header__para">"I am a <b class="blue">Software Engineer</b> with skills in JavaScript, HTML, and CSS. My drive for problem-solving along with my passion for programming will enable me to provide clients with their version of the “American Dream”.
+                <br>
+                Here's a bit more <b class="blue click" onclick="toggleModal()">about me</b>.
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/jonathan-flores1990/" target="_blank" class="social__link click" >
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/kryp-2nite" target="_blank" class="social__link click">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="./assets/Jonathan Flores Resume.pdf" target="_blank" class="social__link click">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Software Engineer</h4>
+                <p class="modal__para">
+                    I'm a <span class="blue">software engineer</span> with passion for developing websites with great <span class="blue">user experiences</span>.<br> I just graduated from General Assembly boot camp and look forward to soaking in and learning from a team of <span class="blue">talented</span> and <span class="blue">experienced</span> software engineers everyday.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/html_logo.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/css_logo.svg" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/JavaScript_Logo.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/React.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/python.jpeg" alt="">
+                        <span class="language__name">Python</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/node.png" alt="">
+                        <span class="language__name">Node.js</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat
+                </h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I'd love to hear from you.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label  class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label  class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label  class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way!</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message. Looking forward to speaking to you soon!
+                </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="blue">Projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/library-commerce.jpg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Library Commerce React
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    html, CSS, JavaScript, React
+                                </h4>
+                                <p class="project__description--para">
+                                    This project, You can browse all the books and add to cart any books that seem interesting to you. you can also sort them from price range or by rating as well.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/kryp-2nite/Library-commerce" class="project__description--link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://libraryproject-react.herokuapp.com/" class="project__description--link" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/meme-generator.jpg" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    MemeGenerator
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    html, CSS, JavaScript, React
+                                </h4>
+                                <p class="project__description--para">
+                                    For this Project, I decided to make a MemeGenerator to challenge my ability to use an API call into my project. You will be able to generate a meme and then write a brief caption to it.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/kryp-2nite/MemeGenerator" class="project__description--link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://meme-generator-react-project.herokuapp.com/" class="project__description--link" target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Project 1
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    html, CSS, JavaScript, React
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta harum sit provident fugit vero veniam atque, nam laudantium mollitia magnam exercitationem. Possimus id omnis non aspernatur expedita rem magnam laudantium.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+            <figure>
+                
+            </figure>
+            <div class="footer__social--list">
+                <a href="" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                GitHub
+                </a>
+                <a href="https://github.com/kryp-2nite" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                LinkedIn
+                </a>
+                <a href="https://www.linkedin.com/in/jonathan-flores1990/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Contact
+                <a href="./assets/Jonathan Flores Resume.pdf" onclick="toggleModal()" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Resume
+                </a>
+            </div>
+            <div class="footer__copyright">CopyRight &copy; 2021 Made by Jonathan Flores</div>
+            </div>   
+        </div>
+    </footer>
+</body>
+</html>
